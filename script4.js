@@ -1,5 +1,4 @@
-let carFuel = 'gas'||'diesel'
- carSize = 'S'||'M'||'L'||'XL'
+
 function myFunc(carFuel='diesel', carSize='XL'){
     let sizeMessage;
     switch (carSize){
@@ -42,4 +41,3 @@ myFunc('gas', 'XL')
 myFunc('diesel', 'XL')
 myFunc()
 myFunc('k','i')
-
