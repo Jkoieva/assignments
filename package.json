@@ -4,11 +4,14 @@
   "description": "lesson 3 project description",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "playwright": "^1.40.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.5"
   }
 }
