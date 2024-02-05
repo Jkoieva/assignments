@@ -1,17 +1,15 @@
 {
-  "name": "lesson3",
+  "name": "assignments",
   "version": "1.0.0",
-  "description": "lesson 3 project description",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
+  "type": "module",
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "playwright": "^1.40.1"
-  },
   "devDependencies": {
     "@playwright/test": "^1.41.1",
-    "@types/node": "^20.11.5"
+    "@types/node": "^20.11.13"
   }
 }
