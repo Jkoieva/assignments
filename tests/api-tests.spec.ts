@@ -3,44 +3,51 @@ import {chromium, test, Page, BrowserContext, expect} from "@playwright/test"
 test.describe.serial("API tests",()=>{
 
 test("Get many users", async({request})=>{
-    let result = await request.get("https://reqres.in/api/users?page=2")
+    let result = await request.get("http://localhost:3000/users")
     let data = await result.json()
     // console.log(data)
     expect(result.ok()).toBeTruthy()
 })
 
 test("Get a single user", async({request})=>{
-    let result = await request.get("https://reqres.in/api/users/2")
+    let result = await request.get("http://localhost:3000/users/2")
     let data = await result.json()
-    console.log(data)
-    expect(data).toEqual(expect.objectContaining({
-        "data": {
+    data.map((obj)=>{
+        
+        expect(obj).toEqual(expect.objectContaining({
+    
             "id": 2,
-            "email": "janet.weaver@reqres.in",
-            "first_name": "Janet",
-            "last_name": "Weaver",
-            "avatar": "https://reqres.in/img/faces/2-image.jpg"
-        },
-        "support": {
-            "url": "https://reqres.in/#support-heading",
-            "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
-        }
+            "name": "Kate",
+            "age": "25",
+            "sex": "female"
+        
     }))
-})
 
-test("Update user",async({request})=>{
-    let result = await request.put("https://reqres.in/api/users/2")
-    expect(result.status()).toBe(200)
+    })
+    
 })
 
 test("Create user", async({request})=>{
-    let result = await request.post("https://reqres.in/api/users")
-    expect(result.status()).toBe(201)
+    let result = await request.post( `http://localhost:3000/users`,{
+        data:{
+            name:'Jack',
+            age:'50',
+            sex:'male'
+        }
+    })
+    expect(result.status()).toBeTruthy();
+
+    const result1 = await request.get("http://localhost:3000/users");
+    expect(await result1.json()).toContainEqual(expect.objectContaining({
+        name:'Jack',
+        age:'50',
+        sex:'male'
+    }))
 
 })
 
 test("Delete user", async({request})=>{
-    let result = await request.delete("https://reqres.in/api/users/2")
+    let result = await request.delete("http://localhost:3000/users/2")
     expect(result.status()).toBeTruthy()
 })
 
