@@ -11,7 +11,7 @@ test.describe("e2e Test for focus",()=>{
         await loginPage.doLoginInvalid()
     })
 
-    test.beforeEach("Login valid test", async ({page})=>{
+    test.only("Login valid test", async ({page})=>{
         let loginPage = new LoginPage(page)
         await loginPage.visit('https://demo.focusfeedback.nl/FE_BSH_TEST/')
         await loginPage.doLoginValid()

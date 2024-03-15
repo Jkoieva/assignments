@@ -34,7 +34,7 @@ export class LoginPage extends BasePage {
    async doLoginValid(){
    await this.emailField.fill('olena.p.qa@gmail.com')
    await this.passwordField.click()
-   await this.passwordField.pressSequentially('Zxcvbn90_')
+   await this.passwordField.pressSequentially('Asdfgh90_')
    await this.submitBtn.click()
    await expect(this.succesLogin).toHaveText('Choose company')
    }

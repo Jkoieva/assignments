@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:login": "playwright test tests/e2eLogin.spec.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
