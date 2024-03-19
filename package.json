@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:login": "playwright test tests/e2eLogin.spec.js"
+    "login": "playwright test tests/e2eLogin.spec.js"
   },
   "keywords": [],
   "author": "",
