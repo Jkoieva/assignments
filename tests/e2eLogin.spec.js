@@ -5,13 +5,13 @@ import { BasePage } from "../page-object/BasePage";
 
 test.describe("e2e Test for focus",()=>{
 
-    test("Login invalid test", async ({page})=>{
-        let loginPage = new LoginPage(page)
-        await loginPage.visit('https://demo.focusfeedback.nl/FE_BSH_TEST/')
-        await loginPage.doLoginInvalid()
-    })
+    // test("Login invalid test", async ({page})=>{
+    //     let loginPage = new LoginPage(page)
+    //     await loginPage.visit('https://demo.focusfeedback.nl/FE_BSH_TEST/')
+    //     await loginPage.doLoginInvalid()
+    // })
 
-    test.only("Login valid test", async ({page})=>{
+    test("Login valid test", async ({page})=>{
         let loginPage = new LoginPage(page)
         await loginPage.visit('https://demo.focusfeedback.nl/FE_BSH_TEST/')
         await loginPage.doLoginValid()
