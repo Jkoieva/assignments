@@ -12,4 +12,6 @@ RUN npm install -g playwright
 
 RUN npx playwright install
 
+RUN playwright install-deps chromium
+
 USER jenkins
