@@ -12,4 +12,4 @@ RUN npm install -g playwright
 
 RUN sudo npx playwright install-deps chromium
 
-USER jenkins
+USER <non_root_user>
