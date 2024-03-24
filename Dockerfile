@@ -10,6 +10,6 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - && \apt-get install 
 
 RUN npm install -g playwright
 
-RUN sudo npx playwright install-deps chromium
+RUN playwright install-deps chromium
 
-USER <non_root_user>
+USER jenkins
